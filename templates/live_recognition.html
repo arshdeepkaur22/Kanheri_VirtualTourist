@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Cave Recognition - Kanheri Caves</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TensorFlow.js for image recognition -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Add image-recognition model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <style>
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .info-card {
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .info-card.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Make video element fill container properly on mobile */
+      #video {
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        background-color: #000;
+      }
+
+      /* Permission button styling */
+      .permission-btn {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-stone-100 text-gray-800 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 text-white p-8 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold">Kanheri Caves</div>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a href="/" class="hover:text-amber-300 transition">Home</a>
+          </li>
+          <li>
+            <a href="#history" class="hover:text-amber-300 transition"
+              >History</a
+            >
+          </li>
+          <li>
+            <a href="#architecture" class="hover:text-amber-300 transition"
+              >Architecture</a
+            >
+          </li>
+          <li>
+            <a href="#visit" class="hover:text-amber-300 transition">Visit</a>
+          </li>
+          <li>
+            <a href="/upload" class="hover:text-amber-300 transition"
+              >Identify Cave</a
+            >
+          </li>
+          <li>
+            <a href="/live-recognition" class="hover:text-amber-300 transition"
+              >Live recognition</a
+            >
+          </li>
+        </ul>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-gray-900 p-4">
+        <ul class="space-y-3">
+          <li>
+            <a href="#home" class="block hover:text-amber-300 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#history" class="block hover:text-amber-300 transition"
+              >History</a
+            >
+          </li>
+          <li>
+            <a
+              href="#architecture"
+              class="block hover:text-amber-300 transition"
+              >Architecture</a
+            >
+          </li>
+          <li>
+            <a href="#visit" class="block hover:text-amber-300 transition"
+              >Visit</a
+            >
+          </li>
+          <li>
+            <a href="/upload" class="block hover:text-amber-300 transition"
+              >Identify Cave</a
+            >
+          </li>
+          <li>
+            <a
+              href="/live-recognition"
+              class="block hover:text-amber-300 transition"
+              >Live Recognition</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Live Recognition Section -->
+    <section class="min-h-screen flex flex-col py-8 px-4">
+      <div class="container mx-auto max-w-4xl">
+        <h1 class="text-3xl font-bold mb-6 text-center text-black">
+          Live Cave Recognition
+        </h1>
+        <p class="text-center mb-8">
+          Point your camera at Kanheri Caves to get real-time information as you
+          explore
+        </p>
+
+        <!-- Permission Notice for Mobile -->
+        <div
+          id="permission-notice"
+          class="mb-8 bg-blue-50 p-4 rounded-lg shadow text-center"
+        >
+          <p class="mb-3">This app needs camera access to recognize caves.</p>
+          <p class="text-sm mb-4">
+            If you've denied permission, please check your browser settings to
+            enable camera access.
+          </p>
+          <button
+            id="request-permission"
+            class="permission-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition"
+          >
+            Enable Camera Access
+          </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Camera Feed -->
+          <div class="flex flex-col items-center">
+            <div
+              class="bg-black rounded-lg overflow-hidden shadow-lg mb-4 w-full"
+            >
+              <video id="video" autoplay playsinline muted></video>
+              <canvas id="canvas" class="hidden"></canvas>
+            </div>
+            <div class="flex space-x-4">
+              <button
+                id="start-camera"
+                class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition"
+              >
+                Start Camera
+              </button>
+              <button
+                id="stop-camera"
+                class="bg-stone-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-lg transition"
+                disabled
+              >
+                Stop Camera
+              </button>
+            </div>
+          </div>
+          <!-- Recognition Results -->
+          <div>
+            <div id="loading-message" class="hidden text-center py-8">
+              <svg
+                class="animate-spin h-10 w-10 text-amber-500 mx-auto mb-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              <p>Initializing recognition model...</p>
+            </div>
+
+            <div id="no-recognition-message" class="text-center py-8">
+              <svg
+                class="w-16 h-16 text-amber-500 mx-auto mb-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path>
+              </svg>
+              <p>Move your camera around to recognize caves</p>
+            </div>
+
+            <!-- Recognition Result Display -->
+            <div id="recognition-result" class="hidden">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-bold text-amber-700 text-xl mb-3">
+                  Recognized Cave:
+                </h3>
+                <div id="cave-details" class="space-y-3">
+                  <p id="cave-name" class="text-lg font-semibold"></p>
+                  <p id="cave-description"></p>
+                  <p id="cave-significance" class="italic"></p>
+                  <p id="cave-period" class="text-sm text-gray-700"></p>
+                  <p id="cave-features" class="text-sm"></p>
+                  <p
+                    id="confidence"
+                    class="text-sm font-medium text-amber-600 mt-2"
+                  ></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4 mt-auto">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <h3 class="text-xl font-bold mb-2">Kanheri Caves</h3>
+            <p>Preserving Buddhist heritage in Mumbai</p>
+          </div>
+          <div>
+            <p>&copy; 2025 Kanheri Caves Explorer. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+      // Live camera recognition
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("video");
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const startCameraButton = document.getElementById("start-camera");
+        const stopCameraButton = document.getElementById("stop-camera");
+        const loadingMessage = document.getElementById("loading-message");
+        const noRecognitionMessage = document.getElementById(
+          "no-recognition-message"
+        );
+        const recognitionResult = document.getElementById("recognition-result");
+        const permissionNotice = document.getElementById("permission-notice");
+        const requestPermissionButton =
+          document.getElementById("request-permission");
+
+        // Cave details elements
+        const caveName = document.getElementById("cave-name");
+        const caveDescription = document.getElementById("cave-description");
+        const caveSignificance = document.getElementById("cave-significance");
+        const cavePeriod = document.getElementById("cave-period");
+        const caveFeatures = document.getElementById("cave-features");
+        const confidence = document.getElementById("confidence");
+
+        let stream = null;
+        let model = null;
+        let recognitionInterval = null;
+        let referenceFeatures = {};
+        let permissionDenied = false;
+
+        // Check if device is mobile
+        const isMobile =
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+
+        // Set canvas size for feature extraction
+        canvas.width = 224;
+        canvas.height = 224;
+
+        // Fetch cave dataset from server
+        async function fetchCaveData() {
+          try {
+            const response = await fetch("/api/caves");
+            if (!response.ok) {
+              throw new Error("Failed to fetch cave data");
+            }
+            return await response.json();
+          } catch (error) {
+            console.error("Error fetching cave data:", error);
+            // Fallback data in case the API fails
+            return [
+              {
+                cave_id: "kanheri1",
+                cave_name: "Cave 1 (Main Chaitya)",
+                description:
+                  "The largest and most impressive cave at Kanheri, serving as a Buddhist prayer hall (Chaitya).",
+                significance:
+                  "Dating to the 2nd century CE, this cave represents the peak of rock-cut architecture.",
+                unique_features: [
+                  "Massive Stupa",
+                  "Wooden-beamed ceiling",
+                  "Intricately carved pillars",
+                ],
+                historical_period: "2nd century CE",
+                influence: "Hinayana Buddhism with later Mahayana influences",
+                image_path: "/dataset/kanheri1.jpg",
+              },
+              {
+                cave_id: "kanheri2",
+                cave_name: "Cave 2",
+                description:
+                  "A significant cave featuring intricate carvings and Buddhist sculptures.",
+                significance:
+                  "Important for its well-preserved Buddhist relics.",
+                unique_features: ["Buddha statues", "Detailed wall carvings"],
+                historical_period: "3rd century CE",
+                influence: "Mahayana Buddhism",
+                image_path: "/dataset/kanheri2.jpg",
+              },
+              {
+                cave_id: "kanheri3",
+                cave_name: "Cave 3 (Darbar Hall)",
+                description:
+                  "Large assembly hall with impressive pillars and Buddhist sculptures.",
+                significance:
+                  "Demonstrates the communal aspect of early Buddhist monasteries.",
+                unique_features: [
+                  "Pillared hall",
+                  "Stone benches",
+                  "Water cisterns",
+                ],
+                historical_period: "1st-2nd century CE",
+                influence: "Early Buddhist monastery architecture",
+                image_path: "/dataset/kanheri3.jpg",
+              },
+            ];
+          }
+        }
+
+        // Function to check for camera permission status
+        async function checkCameraPermission() {
+          try {
+            // Check if permission was previously denied
+            const permissionStatus = await navigator.permissions.query({
+              name: "camera",
+            });
+
+            if (permissionStatus.state === "denied") {
+              permissionDenied = true;
+              permissionNotice.classList.remove("hidden");
+              return false;
+            } else if (permissionStatus.state === "granted") {
+              permissionNotice.classList.add("hidden");
+              return true;
+            } else {
+              // Permission state is 'prompt', will be requested when needed
+              permissionNotice.classList.remove("hidden");
+              return true;
+            }
+          } catch (error) {
+            // Permissions API not supported, we'll find out when we try to access the camera
+            console.log(
+              "Permissions API not supported, will try direct access"
+            );
+            return true;
+          }
+        }
+
+        // Request permission explicitly
+        requestPermissionButton.addEventListener("click", async function () {
+          try {
+            await startCamera();
+            permissionNotice.classList.add("hidden");
+          } catch (error) {
+            console.error("Failed to get camera permission:", error);
+            alert(
+              "Camera access was denied. Please update your browser settings to allow camera access."
+            );
+          }
+        });
+
+        // Function to display cave information
+        function displayCaveInfo(cave, matchConfidence) {
+          // Hide the no-recognition message
+          noRecognitionMessage.classList.add("hidden");
+
+          // Display the cave information
+          caveName.textContent = cave.cave_name;
+          caveDescription.textContent = cave.description;
+          caveSignificance.textContent = cave.significance;
+          cavePeriod.textContent = `Historical Period: ${cave.historical_period}`;
+
+          // Format unique features for display
+          if (cave.unique_features && cave.unique_features.length > 0) {
+            caveFeatures.textContent = `Features: ${cave.unique_features.join(
+              ", "
+            )}`;
+          } else {
+            caveFeatures.textContent = "";
+          }
+
+          // Show confidence level
+          confidence.textContent = `Match Confidence: ${matchConfidence.toFixed(
+            2
+          )}%`;
+
+          // Show the result container
+          recognitionResult.classList.remove("hidden");
+
+          // Add timestamp for the recognition
+          const timestamp = new Date().toLocaleTimeString();
+          console.log(`Recognition at ${timestamp}: ${cave.cave_name}`);
+        }
+
+        // Function to hide cave information
+        function hideCaveInfo() {
+          recognitionResult.classList.add("hidden");
+          noRecognitionMessage.classList.remove("hidden");
+        }
+
+        // Cosine similarity function (for comparing feature vectors)
+        function cosineSimilarity(vecA, vecB) {
+          // Ensure vectors are of the same length
+          if (vecA.length !== vecB.length) {
+            return 0;
+          }
+
+          let dotProduct = 0;
+          let normA = 0;
+          let normB = 0;
+
+          for (let i = 0; i < vecA.length; i++) {
+            dotProduct += vecA[i] * vecB[i];
+            normA += vecA[i] * vecA[i];
+            normB += vecB[i] * vecB[i];
+          }
+
+          if (normA === 0 || normB === 0) {
+            return 0;
+          }
+
+          return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+        }
+
+        // Function to find cave match
+        function findCaveMatch(currentFeatures) {
+          let bestMatch = null;
+          let highestSimilarity = 0;
+
+          // Convert features to array for comparison
+          const featureArray = Array.from(currentFeatures.dataSync());
+
+          // Compare with each reference cave
+          for (const caveId in referenceFeatures) {
+            const similarity = cosineSimilarity(
+              featureArray,
+              referenceFeatures[caveId].features
+            );
+            const similarityPercentage = similarity * 100;
+
+            // Only consider matches above a certain threshold (e.g., 60%)
+            if (similarity > highestSimilarity && similarityPercentage > 60) {
+              highestSimilarity = similarity;
+              bestMatch = {
+                cave: referenceFeatures[caveId].cave,
+                confidence: similarityPercentage,
+              };
+            }
+          }
+
+          return bestMatch;
+        }
+
+        // Function to extract features from image
+        async function extractFeatures(imageElement) {
+          try {
+            // Use the MobileNet model to extract features
+            const activation = model.infer(imageElement, "conv_preds");
+            return activation;
+          } catch (error) {
+            console.error("Error extracting features:", error);
+            return null;
+          }
+        }
+
+        // Function to load reference features
+        async function loadReferenceFeatures() {
+          const caves = await fetchCaveData();
+
+          console.log("Loading reference features for", caves.length, "caves");
+
+          for (const cave of caves) {
+            try {
+              if (cave.image_path) {
+                const img = new Image();
+                img.crossOrigin = "anonymous";
+                img.src = cave.image_path;
+
+                await new Promise((resolve, reject) => {
+                  img.onload = resolve;
+                  img.onerror = () => {
+                    console.error(`Failed to load image for ${cave.cave_id}`);
+                    reject();
+                  };
+                });
+
+                // Extract features from reference image
+                const features = await extractFeatures(img);
+
+                if (features) {
+                  referenceFeatures[cave.cave_id] = {
+                    cave: cave,
+                    features: Array.from(features.dataSync()),
+                  };
+                  console.log(`Loaded features for ${cave.cave_name}`);
+                }
+              }
+            } catch (error) {
+              console.error(`Error processing cave ${cave.cave_id}:`, error);
+            }
+          }
+
+          console.log(
+            "Reference features loaded:",
+            Object.keys(referenceFeatures).length
+          );
+        }
+
+        // Function to process video frame
+        async function processFrame() {
+          if (!video.paused && !video.ended && video.readyState === 4) {
+            // Draw the current video frame to canvas for processing
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+              // Extract features from the current frame
+              const features = await extractFeatures(canvas);
+
+              if (features) {
+                // Find the best match from reference caves
+                const match = findCaveMatch(features);
+
+                if (match) {
+                  console.log(
+                    `Match found: ${
+                      match.cave.cave_name
+                    } (${match.confidence.toFixed(2)}%)`
+                  );
+                  displayCaveInfo(match.cave, match.confidence);
+                } else {
+                  // No match found above threshold
+                  hideCaveInfo();
+                }
+              }
+            } catch (error) {
+              console.error("Error processing frame:", error);
+            }
+          }
+        }
+
+        // Function to handle camera errors
+        function handleCameraError(error) {
+          console.error("Camera error:", error);
+          let errorMessage = "Unable to access the camera.";
+
+          if (
+            error.name === "NotAllowedError" ||
+            error.name === "PermissionDeniedError"
+          ) {
+            permissionDenied = true;
+            errorMessage =
+              "Camera access was denied. Please check your browser settings.";
+            permissionNotice.classList.remove("hidden");
+          } else if (error.name === "NotFoundError") {
+            errorMessage = "No camera found on your device.";
+          } else if (error.name === "NotReadableError") {
+            errorMessage = "Camera is in use by another application.";
+          }
+
+          alert(errorMessage);
+          loadingMessage.classList.add("hidden");
+          stopCamera();
+        }
+
+        // Improved camera start function
+        async function startCamera() {
+          try {
+            loadingMessage.classList.remove("hidden");
+            noRecognitionMessage.classList.add("hidden");
+            recognitionResult.classList.add("hidden");
+
+            // Mobile-specific constraints
+            const constraints = {
+              video: isMobile
+                ? {
+                    facingMode: { ideal: "environment" },
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 },
+                  }
+                : {
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 },
+                  },
+            };
+
+            // Request camera access
+            stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+            // Display the video stream
+            video.srcObject = stream;
+            video.setAttribute("playsinline", true); // Important for iOS
+            video.setAttribute("muted", true);
+            video.setAttribute("autoplay", true);
+
+            // Wait for video to be ready
+            await new Promise((resolve) => {
+              video.onloadedmetadata = resolve;
+            });
+
+            video.play().catch((e) => console.error("Error playing video:", e));
+
+            // Hide permission notice once camera is working
+            permissionNotice.classList.add("hidden");
+            permissionDenied = false;
+
+            // Load MobileNet model if not already loaded
+            if (!model) {
+              try {
+                console.log("Loading MobileNet model...");
+                model = await mobilenet.load();
+                console.log("MobileNet model loaded!");
+
+                // Load reference features
+                await loadReferenceFeatures();
+              } catch (error) {
+                console.error("Error loading model:", error);
+                alert(
+                  "Failed to load recognition model. Please try again later."
+                );
+                loadingMessage.classList.add("hidden");
+                stopCamera();
+                return;
+              }
+            }
+
+            loadingMessage.classList.add("hidden");
+            noRecognitionMessage.classList.remove("hidden");
+
+            // Enable/disable buttons
+            startCameraButton.disabled = true;
+            stopCameraButton.disabled = false;
+
+            // Start periodic frame processing (more frequent on mobile for better experience)
+            recognitionInterval = setInterval(
+              processFrame,
+              isMobile ? 800 : 1000
+            );
+
+            return true;
+          } catch (error) {
+            handleCameraError(error);
+            return false;
+          }
+        }
+
+        // Start camera button
+        startCameraButton.addEventListener("click", startCamera);
+
+        // Stop camera button
+        stopCameraButton.addEventListener("click", function () {
+          stopCamera();
+        });
+
+        function stopCamera() {
+          if (stream) {
+            stream.getTracks().forEach((track) => track.stop());
+            video.srcObject = null;
+          }
+
+          if (recognitionInterval) {
+            clearInterval(recognitionInterval);
+            recognitionInterval = null;
+          }
+
+          // Hide results
+          recognitionResult.classList.add("hidden");
+          loadingMessage.classList.add("hidden");
+          noRecognitionMessage.classList.add("hidden");
+
+          // Show permission notice if permission was denied
+          if (permissionDenied) {
+            permissionNotice.classList.remove("hidden");
+          }
+
+          // Reset buttons
+          startCameraButton.disabled = false;
+          stopCameraButton.disabled = true;
+        }
+
+        // Check initial camera permission
+        checkCameraPermission();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cave Identification Result - Kanheri Caves</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-100 text-gray-800 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 text-white p-8 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold">Kanheri Caves</div>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a href="#home" class="hover:text-amber-300 transition">Home</a>
+          </li>
+          <li>
+            <a href="#history" class="hover:text-amber-300 transition"
+              >History</a
+            >
+          </li>
+          <li>
+            <a href="#architecture" class="hover:text-amber-300 transition"
+              >Architecture</a
+            >
+          </li>
+          <li>
+            <a href="#visit" class="hover:text-amber-300 transition">Visit</a>
+          </li>
+          <li>
+            <a href="/upload" class="hover:text-amber-300 transition"
+              >Identify Cave</a
+            >
+          </li>
+          <li>
+            <a href="/live-recognition" class="hover:text-amber-300 transition"
+              >Live recognition</a
+            >
+          </li>
+        </ul>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-gray-900 p-4">
+        <ul class="space-y-3">
+          <li>
+            <a href="#home" class="block hover:text-amber-300 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#history" class="block hover:text-amber-300 transition"
+              >History</a
+            >
+          </li>
+          <li>
+            <a
+              href="#architecture"
+              class="block hover:text-amber-300 transition"
+              >Architecture</a
+            >
+          </li>
+          <li>
+            <a href="#visit" class="block hover:text-amber-300 transition"
+              >Visit</a
+            >
+          </li>
+          <li>
+            <a href="/upload" class="block hover:text-amber-300 transition"
+              >Identify Cave</a
+            >
+          </li>
+          <li>
+            <a
+              href="/live-recognition"
+              class="block hover:text-amber-300 transition"
+              >Live Recognition</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Result Section with Parallax -->
+    <section
+      class="parallax min-h-screen flex items-center justify-center py-16 px-4"
+      style="background-image: url('/static/images/parallax1.jpg')"
+    >
+      <div class="container mx-auto max-w-4xl">
+        <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-xl">
+          <h1 class="text-3xl font-bold mb-6 text-center text-amber-700">
+            Cave Identification Result
+          </h1>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Uploaded Image -->
+            <div class="flex flex-col items-center">
+              <h2 class="text-xl font-bold mb-4">Your Uploaded Image</h2>
+              <div
+                class="border-2 border-gray-200 rounded-lg overflow-hidden shadow-md"
+              >
+                <img
+                  src="{{ url_for('static', filename='uploads/' + uploaded_image) }}"
+                  alt="Uploaded Cave Image"
+                  class="w-full h-auto max-h-96 object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Match Result -->
+            <div>
+              {% if matched_image %}
+              <h2 class="text-xl font-bold mb-4 text-green-600">
+                Match Found!
+              </h2>
+              <div class="space-y-4">
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">
+                    Cave Identification
+                  </h3>
+                  <p>{{ cave_name }}</p>
+                </div>
+
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">Description</h3>
+                  <p>{{ description }}</p>
+                </div>
+
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">
+                    Historical Significance
+                  </h3>
+                  <p>{{ significance }}</p>
+                </div>
+
+                {% if unique_features %}
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">Unique Features</h3>
+                  <p>{{ unique_features }}</p>
+                </div>
+                {% endif %} {% if historical_period %}
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">
+                    Historical Period
+                  </h3>
+                  <p>{{ historical_period }}</p>
+                </div>
+                {% endif %} {% if influence %}
+                <div class="bg-stone-100 p-4 rounded-lg">
+                  <h3 class="font-bold text-amber-700 mb-2">
+                    Buddhist Influence
+                  </h3>
+                  <p>{{ influence }}</p>
+                </div>
+                {% endif %}
+              </div>
+              {% else %}
+              <div class="flex flex-col items-center justify-center h-full">
+                <svg
+                  class="w-16 h-16 text-amber-500 mb-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  ></path>
+                </svg>
+                <h2 class="text-xl font-bold mb-2 text-amber-700">
+                  No Match Found
+                </h2>
+                <p class="text-center">
+                  We couldn't identify this specific cave from our database. Try
+                  uploading a clearer image or from a different angle.
+                </p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-center">
+            <a
+              href="/upload"
+              class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-lg transition mr-4"
+            >
+              Upload Another Image
+            </a>
+            <a
+              href="/"
+              class="bg-stone-700 hover:bg-gray-900 text-white font-bold py-2 px-6 rounded-lg transition"
+            >
+              Return to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <h3 class="text-xl font-bold mb-2">Kanheri Caves</h3>
+            <p>Preserving Buddhist heritage in Mumbai</p>
+          </div>
+          <div>
+            <p>&copy; 2025 Kanheri Caves Explorer. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

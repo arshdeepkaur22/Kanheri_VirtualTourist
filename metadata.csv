@@ -1,0 +1,440 @@
+cave_id,cave_name,description,significance,unique_features,historical_period,influence
+cave1,"Cave 1 (Main Chaitya)","The largest and most impressive cave at Kanheri, serving as a Buddhist prayer hall (Chaitya). It features a massive rock-cut stupa, wooden-beamed ceilings, and intricately carved columns.","Dating to the 2nd century CE, this cave represents the peak of rock-cut architecture in the Western Ghats region. It was used for grand religious ceremonies and housed large congregations of monks and devotees.","['Massive Stupa', 'Wooden-beamed ceiling', 'Intricately carved pillars']","2nd century CE","Hinayana Buddhism with later Mahayana influences"
+kanheri2,"Cave 1 (Darbar Hall)","The largest and most impressive cave at Kanheri, serving as a Buddhist prayer hall (Chaitya). It features a massive rock-cut stupa, wooden-beamed ceilings, and intricately carved columns.","Dating to the 2nd century CE, this cave represents the peak of rock-cut architecture in the Western Ghats region. It was used for grand religious ceremonies and housed large congregations of monks and devotees.","['Massive Stupa', 'Wooden-beamed ceiling', 'Intricately carved pillars']","2nd century CE","Hinayana Buddhism with later Mahayana influences"
+
+kanheri1,"Cave 2 (Darbar Hall)","A large vihara (monastery) with a spacious central hall and multiple cells carved into the walls, used as living quarters for Buddhist monks.","This cave served as an assembly hall and residence for monks during the 3rd-4th century CE. It was a hub for meditation, scriptural study, and communal discussions.","['Monastic cells', 'Assembly hall', 'Stone benches']","3rd-4th century CE","Mahayana Buddhist monastery"
+kanheri3,"Cave 3 (Water Cistern Cave)","Features an elaborate water management system with stone-cut channels and large cisterns designed for collecting and storing rainwater.","Demonstrates the advanced engineering skills of ancient Buddhist monks for sustainable living. The cave's water system allowed monks to survive through dry seasons.","['Rainwater harvesting system', 'Stone water tanks', 'Drainage channels']","4th-5th century CE","Buddhist monastic sustainability practices"
+kanheri4,"Cave 11 (Sculptured Cave)","A finely carved cave containing multiple Buddha sculptures and elaborate reliefs depicting scenes from Buddhist mythology and Jataka tales.","This cave marks the transition to Mahayana Buddhism, showcasing a more decorative and symbolic representation of Buddhist teachings.","['Bodhisattva reliefs', 'Elaborate carvings', 'Jataka tales inscriptions']","5th-6th century CE","Mahayana Buddhism and artistic evolution"
+kanheri5,"Cave 34 (Painted Cave)","A smaller vihara containing faint remnants of ancient fresco paintings, similar in style to those found at Ajanta Caves.","This cave provides evidence of early Buddhist mural paintings and artistic influences from other Buddhist sites in India.","['Fresco paintings', 'Colorful motifs', 'Meditation cells']","6th-7th century CE","Mahayana artistic traditions"
+kanheri6,"Cave 41 (Avalokiteshvara Cave)","Features an intricately carved figure of Avalokiteshvara, the Bodhisattva of compassion, with multiple arms representing different aspects of Buddhist wisdom.","This cave highlights the transition to the worship of Bodhisattvas, a key feature of Mahayana Buddhism.","['Avalokiteshvara relief', 'Mahayana iconography', 'Guardian figures']","7th-8th century CE","Mahayana and Vajrayana Buddhism"
+kanheri7,"Cave 67 (Meditation Chambers)","A series of small, rock-cut cells used by monks for deep meditation and spiritual retreat.","These caves reflect the strong emphasis on monastic discipline and meditative practices in Buddhist monastic life.","['Small meditation cells', 'Minimalist architecture', 'Quiet and secluded']","8th-9th century CE","Theravada meditation traditions"
+kanheri8,"Cave 8 (Large Assembly Hall)","A spacious hall with multiple stone benches, likely used for discussions, teachings, and community meetings among monks and devotees.","This cave served as a center for education and debate, where monks gathered to discuss Buddhist philosophy and texts.","['Large central hall', 'Stone benches', 'Meeting space']","9th-10th century CE","Buddhist monastic education"
+kanheri9,"Cave 4 (Small Vihara)","A simple monastery with a central open space surrounded by small monk cells, used for living and meditation.","One of the earliest monastic caves at Kanheri, showing the transition from natural rock shelters to structured vihara architecture.","['Basic monk cells', 'Rock-cut simplicity', 'Early Buddhist architecture']","1st-2nd century BCE","Hinayana Buddhist monasticism"
+kanheri10,"Cave 5 (Double-Storeyed Cave)","A unique two-level cave with a hall below and additional monk quarters above.","Represents an advanced form of rock-cut architecture, allowing for multi-functional use within a single cave.","['Two levels', 'Carved staircases', 'Spacious living area']","3rd-4th century CE","Mahayana Buddhist monastic expansion"
+kanheri11,"Cave 6 (Prayer Hall with Stupa)","A smaller chaitya (prayer hall) with a rock-cut stupa at the end, used for meditation and worship.","Shows the importance of stupas in Buddhist religious practice, serving as focal points for devotion.","['Rock-cut stupa', 'Semi-circular hall', 'Sacred space for rituals']","2nd century CE","Hinayana Buddhist worship practices"
+kanheri12,"Cave 12 (Inscriptions Cave)","A cave with multiple Brahmi and Devanagari inscriptions, detailing donations from kings, traders, and monks.","Provides historical records of patronage, showcasing the economic and social support for Buddhist monasticism.","['Ancient inscriptions', 'Records of Buddhist patronage', 'Scriptural documentation']","3rd-5th century CE","Buddhist economic and social networks"
+kanheri13,"Cave 13 (Small Chaitya)","A modestly sized chaitya with a rounded ceiling and a central stupa.","Used by smaller groups of monks and devotees for meditation and chanting.","['Rock-cut stupa', 'Curved ceiling', 'Minimalist architecture']","2nd-3rd century CE","Early Buddhist meditation practices"
+kanheri14,"Cave 14 (Monastic Complex)","A large monastic vihara with interconnected meditation cells, a dining area, and water tanks.","Demonstrates the advanced planning and communal living structure of Buddhist monasteries.","['Multiple monk cells', 'Dining hall', 'Water storage system']","5th-6th century CE","Mahayana monastic community living"
+kanheri15,"Cave 15 (Pillar Cave)","Contains a series of massive rock-cut pillars leading to an open courtyard.","Represents one of the most sophisticated architectural features in Kanheri, showing influences of Gupta-era design.","['Rock-cut pillars', 'Open courtyard', 'Large entranceway']","6th-7th century CE","Mahayana Buddhist artistic development"
+kanheri16,"Cave 16 (Meditation Caves)","A group of small meditation chambers cut deep into the rock, allowing for complete silence and isolation.","Designed specifically for monks practicing deep meditation and spiritual retreat.","['Small isolated rooms', 'Minimalist design', 'Silence-focused meditation space']","7th-8th century CE","Theravada and Mahayana meditation traditions"
+kanheri17,"Cave 17 (Stairway Cave)","Features a long rock-cut staircase leading to an elevated platform, possibly used for lectures or ceremonies.","Illustrates how elevation was used for significant Buddhist gatherings and discourses.","['Rock-cut staircase', 'Elevated platform', 'Lecture space']","8th-9th century CE","Mahayana Buddhist teachings"
+kanheri18,"Cave 18 (Largest Water Tank Cave)","Contains the largest rock-cut water tank in Kanheri, used for storing rainwater for the entire monastery.","An example of ancient water conservation techniques that allowed Kanheri monks to live sustainably.","['Massive water tank', 'Drainage channels', 'Monastic sustainability']","9th-10th century CE","Buddhist ecological and engineering advancements"
+kanheri19,"Cave 19 (Ornate Buddha Sculptures Cave)","This cave features intricate sculptures of Buddha and Bodhisattvas, with finely carved reliefs on the walls.","Showcases the shift from simple rock-cut architecture to highly artistic Mahayana Buddhist iconography.","['Intricate carvings', 'Buddha and Bodhisattva sculptures', 'Ornate reliefs']","5th-6th century CE","Mahayana Buddhist artistic expression"
+kanheri20,"Cave 20 (Collapsed Cave)","This cave was originally a large monastery but has suffered extensive collapse over time.","Remains provide insight into ancient construction techniques and the impact of erosion on rock-cut structures.","['Ruins of a monastery', 'Visible remnants of pillars', 'Collapsed roof']","3rd-4th century CE","Early Buddhist monastic structures"
+kanheri21,"Cave 21 (Chaitya with Stupa Niches)","A prayer hall with multiple niches containing small rock-cut stupas.","Suggests that it was a site for extensive worship, with monks or pilgrims offering tributes to multiple stupas.","['Multiple stupas', 'Chaitya hall', 'Rock-cut votive niches']","4th-5th century CE","Mahayana Buddhist worship practices"
+kanheri22,"Cave 22 (Small Monastery with Pillars)","A vihara with a central pillar hall and multiple monk cells around it.","Demonstrates the transition towards more sophisticated monastic living spaces with structured support columns.","['Rock-cut pillars', 'Central courtyard', 'Multiple monk cells']","6th-7th century CE","Buddhist monastic architectural advancements"
+kanheri23,"Cave 23 (Meditation Chambers)","A series of small, isolated caves used for silent meditation by Buddhist monks.","Designed to provide solitude and peace for monks engaged in deep meditation and ascetic practices.","['Isolated cells', 'Minimalist interiors', 'Silent meditation zones']","7th-8th century CE","Theravada and Mahayana meditation traditions"
+kanheri24,"Cave 24 (Monk's Assembly Cave)","A large gathering space where monks would meet for discussions, rituals, and communal activities.","Highlights the importance of collective decision-making and spiritual discourse in monastic life.","['Large open hall', 'Seating arrangements', 'Meeting space for monks']","8th-9th century CE","Mahayana Buddhist monastic organization"
+kanheri25,"Cave 25 (Hidden Shrine Cave)","A small hidden chamber deep within the rock formation, likely used for secret rituals or private meditation.","Rare cave indicating specialized Buddhist practices or esoteric meditation traditions.","['Hidden entrance', 'Secluded chamber', 'Possible tantric Buddhist influences']","9th-10th century CE","Esoteric Buddhist rituals and meditation"
+kanheri26,"Cave 26 (Large Water Reservoir Cave)","A rock-cut cave specifically designed for water storage, featuring channels that direct rainwater into a large tank.","Illustrates advanced water conservation techniques that sustained the monastic community.","['Large rock-cut tank', 'Water harvesting channels', 'Monastic sustainability']","10th-11th century CE","Buddhist ecological awareness and resource management"
+kanheri27,"Cave 27 (Grand Meditation Hall)","A vast meditation hall with precisely carved seats for monks to engage in deep contemplation.","One of the largest meditation spaces at Kanheri, reflecting the importance of spiritual retreat in Buddhism.","['Large open space', 'Multiple monk seats', 'Minimalist design for focus']","8th-9th century CE","Theravāda and Mahāyāna meditation practices"
+kanheri28,"Cave 28 (Bodhisattva Shrine)","A small cave shrine dedicated to Bodhisattvas, featuring intricate carvings and sculptures.","Depicts the growing influence of Mahāyāna Buddhism with strong Bodhisattva veneration.","['Detailed Bodhisattva reliefs', 'Prayer niches', 'Carved altar']","5th-6th century CE","Mahāyāna Buddhist iconography"
+kanheri29,"Cave 29 (Underground Water Channel)","Features an advanced underground water channel system for collecting and storing rainwater.","Demonstrates the engineering expertise of ancient Buddhist monks in water conservation.","['Subterranean water flow system', 'Storage reservoirs', 'Rock-cut pipelines']","9th-10th century CE","Sustainable monastic living"
+kanheri30,"Cave 30 (Sacred Stupa Chamber)","Contains a well-preserved stupa with inscriptions and carvings depicting Buddhist teachings.","Served as a focal point for religious ceremonies and rituals conducted by monks.","['Rock-cut stupa', 'Sacred inscriptions', 'Carved Buddhist symbols']","4th-5th century CE","Stupa worship and Buddhist rituals"
+kanheri31,"Cave 31 (Monk's Private Chamber)","A secluded cave designed for individual monk residences, providing solitude and minimal distractions.","Reflects the importance of individual ascetic practices in monastic life.","['Small meditation chamber', 'Minimalistic living space', 'Single entrance for privacy']","7th-8th century CE","Theravāda ascetic traditions"
+kanheri32,"Cave 32 (Temple Cave with Pillared Facade)","Features a grand entrance with rock-cut pillars leading to a temple-like prayer hall.","Represents the architectural evolution of Buddhist prayer halls in Western India.","['Ornate entrance pillars', 'Sculpted doorway', 'Temple-like layout']","10th-11th century CE","Fusion of Buddhist and local architectural styles"
+kanheri33,"Cave 33 (Large Monastery Complex)","A sprawling monastery complex with multiple living quarters, a prayer hall, and a community dining area.","One of the most expansive monastery caves, accommodating a large number of monks.","['Multiple monk cells', 'Dining space', 'Large gathering area']","9th-10th century CE","Advanced monastic organization"
+kanheri34,"Cave 34 (Secret Ritual Chamber)","A hidden chamber believed to have been used for esoteric Buddhist rituals and teachings.","Suggests the presence of Vajrayāna Buddhist influences at Kanheri.","['Hidden passage', 'Symbolic carvings', 'Possibly used for Tantric rituals']","11th-12th century CE","Vajrayāna Buddhist practices"
+
+CAVE_DATA = {
+    'kanheri1': {
+        'cave_name': 'Cave 1 (Main Chaitya)',
+        'description': 'The largest and most impressive cave at Kanheri, serving as a Buddhist prayer hall (Chaitya). It features a massive rock-cut stupa, wooden-beamed ceilings, and intricately carved columns.',
+        'significance': 'Dating to the 2nd century CE, this cave represents the peak of rock-cut architecture in the Western Ghats region. It was used for grand religious ceremonies and housed large congregations of monks and devotees.',
+        'unique_features': ['Massive Stupa', 'Wooden-beamed ceiling', 'Intricately carved pillars'],
+        'historical_period': '2nd century CE',
+        'influence': 'Hinayana Buddhism with later Mahayana influences'
+    },
+    'kanheri2': {
+        'cave_name': 'Cave 2 (Darbar Hall)',
+        'description': 'A large vihara (monastery) with a spacious central hall and multiple cells carved into the walls, used as living quarters for Buddhist monks.',
+        'significance': 'This cave served as an assembly hall and residence for monks during the 3rd-4th century CE. It was a hub for meditation, scriptural study, and communal discussions.',
+        'unique_features': ['Monastic cells', 'Assembly hall', 'Stone benches'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhist monastery'
+    },
+    'kanheri3': {
+        'cave_name': 'Cave 3',
+        'description': 'A significant cave featuring a large Chaitya hall with a stupa at one end and rows of columns lining the interior.',
+        'significance': 'Represents the evolution of Buddhist architecture and the increasing influence of Mahayana Buddhism during its period.',
+        'unique_features': ['Chaitya hall', 'Rock-cut stupa', 'Lined columns'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Transition from Hinayana to Mahayana Buddhism'
+    },
+    'kanheri4': {
+        'cave_name': 'Cave 4',
+        'description': 'A small vihara with a central hall and attached cells, possibly used for meditation and study by monks.',
+        'significance': 'Demonstrates the simplicity and functionality of early monastic dwellings in the Kanheri complex.',
+        'unique_features': ['Central hall', 'Monastic cells'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri5': {
+        'cave_name': 'Cave 5',
+        'description': 'A large hall with multiple entrances and a series of benches carved along the walls, possibly used as a congregation or dining area for monks.',
+        'significance': 'Highlights the communal aspects of monastic life and the emphasis on shared activities within the Buddhist community.',
+        'unique_features': ['Large hall', 'Multiple entrances', 'Stone benches'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri6': {
+        'cave_name': 'Cave 6',
+        'description': 'A modest cave featuring a small shrine room with a rock-cut Buddha statue and adjacent cells for monks.',
+        'significance': 'Reflects the devotional practices and the growing importance of Buddha imagery in Buddhist worship.',
+        'unique_features': ['Shrine room', 'Rock-cut Buddha statue', 'Monastic cells'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri7': {
+        'cave_name': 'Cave 7',
+        'description': 'An elaborate cave with a large veranda, intricately carved pillars, and a central hall leading to a shrine room.',
+        'significance': 'Showcases the artistic advancements and the integration of decorative elements in monastic architecture.',
+        'unique_features': ['Large veranda', 'Intricately carved pillars', 'Shrine room'],
+        'historical_period': '6th-7th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri8': {
+        'cave_name': 'Cave 8',
+        'description': 'A small chapel-like cave with a central stupa and remnants of ancient paintings on the walls and ceiling.',
+        'significance': 'Provides insights into the use of painted decorations in Buddhist cave temples and the themes depicted in early Buddhist art.',
+        'unique_features': ['Central stupa', 'Ancient wall and ceiling paintings'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri9': {
+        'cave_name': 'Cave 9',
+        'description': 'A large vihara with a central courtyard, surrounded by cells and featuring a rock-cut water cistern.',
+        'significance': 'Highlights the emphasis on water management and the provision of essential amenities in monastic complexes.',
+        'unique_features': ['Central courtyard', 'Monastic cells', 'Rock-cut water cistern'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri10': {
+        'cave_name': 'Cave 10',
+        'description': 'A Chaitya hall with a distinctive horseshoe-shaped entrance and a rock-cut stupa at the far end.',
+        'significance': 'Exemplifies the architectural design of early Buddhist prayer halls and the symbolic representation of the stupa.',
+        'unique_features': ['Horseshoe-shaped entrance', 'Rock-cut stupa'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+'kanheri11': {
+        'cave_name': 'Cave 11 (Durbar Hall)',
+        'description': 'A grand hall with a rock-cut throne at the center, possibly used for administrative or teaching purposes by Buddhist monks.',
+        'significance': 'Suggests the presence of a structured monastic administration and its role in community affairs.',
+        'unique_features': ['Rock-cut throne', 'Spacious hall', 'Monastic cells'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri12': {
+        'cave_name': 'Cave 12',
+        'description': 'A medium-sized vihara with a large central hall, surrounded by cells for monks.',
+        'significance': 'Demonstrates the standard layout of monastic dwellings at Kanheri, emphasizing communal living.',
+        'unique_features': ['Central hall', 'Monastic cells'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri13': {
+        'cave_name': 'Cave 13',
+        'description': 'A small cave with a series of inscriptions on the walls, possibly recording donations or monastic decrees.',
+        'significance': 'Offers valuable insights into the economic and social aspects of the Kanheri monastic community.',
+        'unique_features': ['Inscriptions', 'Simple rock-cut design'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri14': {
+        'cave_name': 'Cave 14',
+        'description': 'A shrine cave with a seated Buddha statue and intricate carvings on the walls.',
+        'significance': 'Reflects the growing importance of Buddha imagery in Mahayana Buddhism.',
+        'unique_features': ['Seated Buddha statue', 'Intricate carvings'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri15': {
+        'cave_name': 'Cave 15',
+        'description': 'A large vihara with a rock-cut water cistern, ensuring water supply for monks.',
+        'significance': 'Demonstrates advanced water management techniques within Buddhist monasteries.',
+        'unique_features': ['Rock-cut cistern', 'Monastic cells'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri16': {
+        'cave_name': 'Cave 16',
+        'description': 'A small meditation cave with minimal decoration, designed for solitary retreat.',
+        'significance': 'Highlights the importance of meditation and ascetic practices in Buddhist monastic life.',
+        'unique_features': ['Small meditation chamber', 'Minimalist design'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri17': {
+        'cave_name': 'Cave 17',
+        'description': 'A large cave with a grand veranda supported by intricately carved pillars.',
+        'significance': 'Demonstrates the evolution of architectural styles in later Mahayana monasteries.',
+        'unique_features': ['Grand veranda', 'Carved pillars'],
+        'historical_period': '6th-7th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri18': {
+        'cave_name': 'Cave 18',
+        'description': 'A small cave with a series of sculpted reliefs depicting Buddhist themes.',
+        'significance': 'Provides insights into artistic representations of Buddhist teachings.',
+        'unique_features': ['Sculpted reliefs', 'Thematic carvings'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri19': {
+        'cave_name': 'Cave 19',
+        'description': 'A large cave with a rock-cut water reservoir, ensuring a steady supply of water for monks.',
+        'significance': 'Highlights the self-sustaining nature of the Kanheri monastic complex.',
+        'unique_features': ['Rock-cut reservoir', 'Monastic cells'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri20': {
+        'cave_name': 'Cave 20',
+        'description': 'A Chaitya hall with a well-preserved rock-cut stupa and an intricately decorated entrance.',
+        'significance': 'One of the finest examples of Buddhist prayer halls at Kanheri, showcasing artistic mastery.',
+        'unique_features': ['Rock-cut stupa', 'Decorated entrance'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+ 'kanheri21': {
+        'cave_name': 'Cave 21',
+        'description': 'A small vihara with a simple structure, used as a monastic residence.',
+        'significance': 'Demonstrates the widespread presence of monastic quarters throughout Kanheri.',
+        'unique_features': ['Monastic cells', 'Plain architecture'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri22': {
+        'cave_name': 'Cave 22',
+        'description': 'A shrine cave featuring a seated Buddha flanked by Bodhisattvas.',
+        'significance': 'Shows the transition towards more elaborate Buddha imagery in Mahayana tradition.',
+        'unique_features': ['Seated Buddha statue', 'Bodhisattva reliefs'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri23': {
+        'cave_name': 'Cave 23',
+        'description': 'A large cave with a veranda and a spacious inner chamber.',
+        'significance': 'Possibly served as a gathering space for monks to study and meditate.',
+        'unique_features': ['Veranda', 'Spacious hall'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri24': {
+        'cave_name': 'Cave 24',
+        'description': 'A rock-cut vihara with multiple monastic cells and a large open space.',
+        'significance': 'Represents the functional design of monastic residences at Kanheri.',
+        'unique_features': ['Monastic cells', 'Large open space'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri25': {
+        'cave_name': 'Cave 25',
+        'description': 'A small cave with a rock-cut bench, likely used for resting or studying.',
+        'significance': 'Shows evidence of the daily routines of monks in a monastic setting.',
+        'unique_features': ['Rock-cut bench', 'Simple structure'],
+        'historical_period': '3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri26': {
+        'cave_name': 'Cave 26',
+        'description': 'A medium-sized cave with a partially damaged stupa inside.',
+        'significance': 'Suggests the continued veneration of stupas as religious symbols.',
+        'unique_features': ['Rock-cut stupa', 'Damaged carvings'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri27': {
+        'cave_name': 'Cave 27',
+        'description': 'A meditation cave with a single chamber and a small niche for a Buddha image.',
+        'significance': 'Illustrates the emphasis on meditation in monastic life.',
+        'unique_features': ['Small niche for Buddha', 'Simple meditation chamber'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri28': {
+        'cave_name': 'Cave 28',
+        'description': 'A Chaitya hall with remains of a rock-cut stupa and signs of artistic carvings.',
+        'significance': 'One of the smaller prayer halls, showcasing early Buddhist artistic traditions.',
+        'unique_features': ['Rock-cut stupa', 'Carved remains'],
+        'historical_period': '2nd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri29': {
+        'cave_name': 'Cave 29',
+        'description': 'A large vihara with an open courtyard, leading to multiple monk cells.',
+        'significance': 'Demonstrates the evolution of monastic architecture at Kanheri.',
+        'unique_features': ['Open courtyard', 'Multiple monk cells'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri30': {
+        'cave_name': 'Cave 30',
+        'description': 'A partially ruined cave with faded inscriptions and relief carvings.',
+        'significance': 'Holds historical value due to inscriptions that provide insights into ancient monastic life.',
+        'unique_features': ['Faded inscriptions', 'Relief carvings'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+'kanheri31': {
+        'cave_name': 'Cave 31',
+        'description': 'A small vihara with minimal carvings, used for meditation and residence.',
+        'significance': 'Represents the simple lifestyle of Buddhist monks at Kanheri.',
+        'unique_features': ['Monastic cells', 'Plain architecture'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri32': {
+        'cave_name': 'Cave 32',
+        'description': 'A medium-sized cave with a damaged façade and a few rock-cut benches inside.',
+        'significance': 'Possibly served as a gathering space or resting area for monks.',
+        'unique_features': ['Rock-cut benches', 'Damaged façade'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri33': {
+        'cave_name': 'Cave 33',
+        'description': 'A vihara with an open verandah and multiple monk cells.',
+        'significance': 'Highlights the structured design of monastic dwellings at Kanheri.',
+        'unique_features': ['Open verandah', 'Monastic cells'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri34': {
+        'cave_name': 'Cave 34',
+        'description': 'A small cave with a stone-cut platform, possibly used for religious instruction.',
+        'significance': 'Suggests the use of caves for teaching and learning Buddhist scriptures.',
+        'unique_features': ['Stone-cut platform', 'Simple structure'],
+        'historical_period': '4th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri35': {
+        'cave_name': 'Cave 35',
+        'description': 'A ruined cave with faint traces of inscriptions and decorative elements.',
+        'significance': 'Provides insights into early Buddhist inscriptional practices.',
+        'unique_features': ['Faint inscriptions', 'Weathered carvings'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri36': {
+        'cave_name': 'Cave 36',
+        'description': 'A small meditation chamber with a niche possibly housing a Buddha statue.',
+        'significance': 'Reflects the meditative focus of Kanheri’s monastic community.',
+        'unique_features': ['Meditation chamber', 'Niche for Buddha statue'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri37': {
+        'cave_name': 'Cave 37',
+        'description': 'A monastery cave with multiple cells and a rock-cut water cistern.',
+        'significance': 'Demonstrates the importance of water storage in monastic settlements.',
+        'unique_features': ['Monastic cells', 'Rock-cut water cistern'],
+        'historical_period': '3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri38': {
+        'cave_name': 'Cave 38',
+        'description': 'A prayer hall with a small, damaged stupa at its center.',
+        'significance': 'Indicates continued Buddhist ritual practices at Kanheri.',
+        'unique_features': ['Small stupa', 'Prayer hall'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri39': {
+        'cave_name': 'Cave 39',
+        'description': 'A cave with elaborate carvings on its entrance and an open courtyard.',
+        'significance': 'One of the more decorative caves, likely indicating a wealthy patron.',
+        'unique_features': ['Elaborate entrance carvings', 'Open courtyard'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri40': {
+        'cave_name': 'Cave 40',
+        'description': 'A large vihara with multiple chambers and faded paintings on its walls.',
+        'significance': 'Suggests the use of paintings as a form of Buddhist storytelling.',
+        'unique_features': ['Faded wall paintings', 'Multiple chambers'],
+        'historical_period': '5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+'kanheri41': {
+        'cave_name': 'Cave 41',
+        'description': 'A small monastic cave with a few rock-cut benches and an open verandah.',
+        'significance': 'Likely served as a meditation and resting place for monks.',
+        'unique_features': ['Rock-cut benches', 'Open verandah'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri42': {
+        'cave_name': 'Cave 42',
+        'description': 'A ruined cave with remnants of a doorway and faint traces of inscriptions.',
+        'significance': 'Provides insights into the early architectural evolution of Kanheri.',
+        'unique_features': ['Ruined doorway', 'Faint inscriptions'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri43': {
+        'cave_name': 'Cave 43',
+        'description': 'A vihara with multiple chambers and a damaged stupa inside.',
+        'significance': 'Indicates continued Buddhist veneration practices at Kanheri.',
+        'unique_features': ['Multiple chambers', 'Damaged stupa'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri44': {
+        'cave_name': 'Cave 44',
+        'description': 'A simple rock-cut structure with minimal decoration.',
+        'significance': 'Represents the austere lifestyle of Buddhist monks at Kanheri.',
+        'unique_features': ['Plain architecture', 'Rock-cut structure'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri45': {
+        'cave_name': 'Cave 45',
+        'description': 'A prayer hall with faint remains of a stupa at its center.',
+        'significance': 'Demonstrates the ritualistic use of stupas in Buddhist worship.',
+        'unique_features': ['Stupa remains', 'Prayer hall'],
+        'historical_period': '2nd-3rd century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri46': {
+        'cave_name': 'Cave 46',
+        'description': 'A monastery cave with multiple cells and a small courtyard.',
+        'significance': 'Provides evidence of communal living among monks.',
+        'unique_features': ['Monastic cells', 'Small courtyard'],
+        'historical_period': '5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri47': {
+        'cave_name': 'Cave 47',
+        'description': 'A rock-cut vihara with a large open area and traces of paintings on the walls.',
+        'significance': 'Suggests the use of paintings for religious storytelling.',
+        'unique_features': ['Traces of paintings', 'Large open area'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri48': {
+        'cave_name': 'Cave 48',
+        'description': 'A ruined cave with broken pillars and an open entrance.',
+        'significance': 'Shows signs of architectural decay over centuries.',
+        'unique_features': ['Broken pillars', 'Open entrance'],
+        'historical_period': '3rd-4th century CE',
+        'influence': 'Hinayana Buddhism'
+    },
+    'kanheri49': {
+        'cave_name': 'Cave 49',
+        'description': 'A small meditation chamber with a rock-cut bench.',
+        'significance': 'Used by monks for silent contemplation and meditation.',
+        'unique_features': ['Rock-cut bench', 'Small chamber'],
+        'historical_period': '4th-5th century CE',
+        'influence': 'Mahayana Buddhism'
+    },
+    'kanheri50': {
+        'cave_name': 'Cave 50',
+        'description': 'A large vihara with multiple monk cells and a rock-cut cistern for water storage.',
+        'significance': 'Demonstrates the importance of water conservation in monastic life.',
+        'unique_features': ['Rock-cut cistern', 'Multiple monk cells'],
+        'historical_period': '5th-6th century CE',
+        'influence': 'Mahayana Buddhism'
+    }
+}
